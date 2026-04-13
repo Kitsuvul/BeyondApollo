@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Levels>
+  <Level ID="0">
+    <Planet>
+      <Size>Small</Size>
+      <Position>
+        <x>0.0</x>
+        <y>50.0</y>
+        <z>0.0</z>
+      </Position>
+    </Planet>
+  </Level>
+  <Level ID="1">
+    <Planet>
+      <Size>Small</Size>
+      <Position>
+        <x>0.0</x>
+        <y>25.0</y>
+        <z>0.0</z>
+      </Position>
+    </Planet>
+    <Planet>
+      <Size>Small</Size>
+      <Position>
+        <x>0.0</x>
+        <y>55.0</y>
+        <z>0.0</z>
+      </Position>
+    </Planet>
+  </Level>
+  <Level ID="2">
+    <Planet>
+      <Size>Small</Size>
+      <Position>
+        <x>2.5</x>
+        <y>30.0</y>
+        <z>0.0</z>
+      </Position>
+    </Planet>
+    <Planet>
+      <Size>Small</Size>
+      <Position>
+        <x>-2.5</x>
+        <y>30.0</y>
+        <z>0.0</z>
+      </Position>
+    </Planet>
+  </Level>
+  <Level ID="3">
+    <Planet>
+      <Size>Small</Size>
+      <Position>
+        <x>2.5</x>
+        <y>55.0</y>
+        <z>0.0</z>
+      </Position>
+    </Planet>
+    <Planet>
+      <Size>Small</Size>
+      <Position>
+        <x>-5.0</x>
+        <y>25.0</y>
+        <z>0.0</z>
+      </Position>
+    </Planet>
+  </Level>
+  <Level ID="4">
+    <Planet>
+      <Size>Small</Size>
+      <Position>
+        <x>-2.5</x>
+        <y>30.0</y>
+        <z>0.0</z>
+      </Position>
+    </Planet>
+    <Planet>
+      <Size>Small</Size>
+      <Position>
+        <x>2.5</x>
+        <y>25.0</y>
+        <z>0.0</z>
+      </Position>
+    </Planet>
+  </Level>
+  <Level ID="5">
+    <Planet>
+      <Size>Small</Size>
+      <Position>
+        <x>-2.5</x>
+        <y>45.0</y>
+        <z>0.0</z>
+      </Position>
+    </Planet>
+    <Planet>
+      <Size>Small</Size>
+      <Position>
+        <x>5.0</x>
+        <y>25.0</y>
+        <z>0.0</z>
+      </Position>
+    </Planet>
+  </Level>
+</Levels>

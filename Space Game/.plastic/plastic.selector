@@ -1,0 +1,4 @@
+repository "Beyond Apollo/Space Game@5772822845068@cloud"
+  path "/"
+    br "/main"
+    co "/main"

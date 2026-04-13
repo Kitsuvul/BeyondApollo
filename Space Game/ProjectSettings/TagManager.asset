@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - Velocity
+  - WinBox
+  - MenuButton
+  - ResetButton
+  - LevelMenu
+  - CanvasUI
+  - WinBoxUI
+  - LoadingScreen
+  - LevelButtons
+  - Background
+  - FailBoxUI
+  - ExitSign
+  - SettingsPanel
+  - CreditsPanel
+  - TitlePanel
+  - PersistSettings
+  - DebugCircles
+  - Arrow
+  - Boost
+  - Home
+  - StartBox
+  - Marker
+  - MarkerContainer
+  - Comet
+  - SoundObject
+  - LevelEditorManager
+  - Small
+  - Medium
+  - Large
+  - ButtonHolder
+  - PlanetHolder
+  - Debris
+  - EndlessBoxUI
+  - TutorialPanel
+  - ExitArrow
+  - ExtraLarge
+  - Tiny
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Objects Layer
+  - Background Layer
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background Layer
+    uniqueID: 122993719
+    locked: 0
+  - name: Debug Layer
+    uniqueID: 931951725
+    locked: 0
+  - name: Objects Layer
+    uniqueID: 2690522777
+    locked: 0
+  m_RenderingLayers:
+  - Default
