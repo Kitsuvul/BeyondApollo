@@ -1795,14 +1795,14 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164673888}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 12
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
+  m_CookieSize2D: {x: 10, y: 10}
   m_Shadows:
     m_Type: 0
     m_Resolution: -1
@@ -3207,6 +3207,7 @@ CapsuleCollider2D:
   m_Direction: 1
 --- !u!212 &1649441140
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3252,6 +3253,7 @@ SpriteRenderer:
   m_SortingLayerID: -1604444519
   m_SortingLayer: 3
   m_SortingOrder: 1
+  m_MaskInteraction: 0
   m_Sprite: {fileID: -4845973803768309529, guid: d63d2c47c31832c44b17fed46a8ae2cc,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3262,7 +3264,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1649441141
 Transform:
@@ -4005,12 +4006,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2440383b0742edc4f9ddc3fabdb52e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlanetTinyPrefab: {fileID: 0}
   PlanetSmallPrefab: {fileID: 4795755829373084144, guid: acaa991b1f78b9b4ca13a94e49746e43,
     type: 3}
   PlanetMediumPrefab: {fileID: 22593965962131193, guid: a9a12f1f3e000d846bcb8f9f6bddf59c,
     type: 3}
   PlanetLargePrefab: {fileID: 5289773634592119375, guid: 3d2bb416bc438244a9e5d7820834348d,
     type: 3}
+  PlanetExtraLargePrefab: {fileID: 0}
+  CometPrefab: {fileID: 0}
 --- !u!114 &2105946035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4085,7 +4089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.27450982, g: 0.64705884, b: 0.21960786, a: 1}
+  m_Color: {r: 0.34117648, g: 0.8588236, b: 0.21176472, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4519,6 +4523,7 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &4238361318201201012
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4564,6 +4569,7 @@ SpriteRenderer:
   m_SortingLayerID: -1604444519
   m_SortingLayer: 3
   m_SortingOrder: 3
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 2822682636385868039, guid: 9ae8c8d01c7351546aeea508fb9fcf80,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4574,7 +4580,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!70 &4527609954921789507
 CapsuleCollider2D:
@@ -4685,8 +4690,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 649223268058989734, guid: ac9795566b87cdd4aafe5d5b0fca3eaf, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 3457677577525572326, guid: 182f881f6d200b84385dc351399a4093,
+    type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4772,7 +4778,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.27450982, g: 0.64705884, b: 0.21960786, a: 1}
+  m_Color: {r: 0.34117648, g: 0.8588236, b: 0.21176472, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4852,8 +4858,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 649223268058989734, guid: ac9795566b87cdd4aafe5d5b0fca3eaf, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 3457677577525572326, guid: 182f881f6d200b84385dc351399a4093,
+    type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

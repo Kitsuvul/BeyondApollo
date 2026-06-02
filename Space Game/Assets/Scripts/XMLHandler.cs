@@ -27,7 +27,7 @@ public class XMLHandler : MonoBehaviour
     private void InitXML()
     {
         levelDataXml = new XmlDocument();
-        levelDataXml.LoadXml(Resources.Load<TextAsset>("XML/Levels").text);
+        levelDataXml.LoadXml(Resources.Load<TextAsset>("XML/LevelsNew").text);
     }
 
     public bool AddEntry(List<GameObject> planets, int id, SortedDictionary<int, int> satelliteID)
@@ -58,7 +58,7 @@ public class XMLHandler : MonoBehaviour
             XmlNodeList list = levelDataXml.SelectNodes("/Levels/Level");
             XmlNode totalLevels = levelDataXml.SelectSingleNode("/Levels/TotalLevels"); 
             totalLevels.InnerText = list.Count.ToString();
-            levelDataXml.Save("C://Users//danie//Documents//GitHub//SpaceGame//Space Game//Assets//Resources//XML//Levels.xml");
+            levelDataXml.Save("C://Users//danie//Documents//GitHub//BeyondApollo//Space Game//Assets//Resources//XML//LevelsNew.xml");
 
             Debug.Log("Complete");
             return true;

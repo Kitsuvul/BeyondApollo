@@ -205,7 +205,7 @@ public class LevelLoader : MonoBehaviour
     private void InitXML()
     {
         levelDataXml = new XmlDocument();
-        levelDataXml.LoadXml(Resources.Load<TextAsset>("XML/Levels").text);
+        levelDataXml.LoadXml(Resources.Load<TextAsset>("XML/LevelsNew").text);
         totalLevels = int.Parse(levelDataXml.SelectSingleNode("/Levels/TotalLevels").InnerText);
     }
 
