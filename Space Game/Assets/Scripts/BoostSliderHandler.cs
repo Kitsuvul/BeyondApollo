@@ -6,9 +6,15 @@ Notes:
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BoostSliderHandler : TopLevelUIHandler
+public class BoostSliderHandler : MonoBehaviour
 {
+    protected GameObject rocketShipObj;
+
     #region Unity Functions
+    private void Awake()
+    {
+        rocketShipObj = GameObject.FindGameObjectWithTag("Player");
+    }
     void Update()
     {
         UpdateBoostSlider();

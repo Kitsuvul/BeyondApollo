@@ -18,6 +18,7 @@ public class WinStateHandler : MonoBehaviour
     {
         if(other.gameObject == rocketShipObj.gameObject)
         {
+            Camera.main.GetComponent<CameraScript>().OnWinAnimation();
             soundObj.GetComponent<SoundHandler>().StopAudioRocketFlyingClip();
             rocketShipObj.GetComponent<ShipControlsScript>().RemoveVelocityFromShip();
             rocketShipObj.GetComponent<BaseShipScript>().OnWinAnimation();

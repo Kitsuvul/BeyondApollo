@@ -54,7 +54,6 @@ public class LevelUIPanelHandler : MonoBehaviour
 
         if (this.gameObject.activeSelf == true && !loadedAllButtons && gameControllerObj != null)
         {
-
             foreach (GameObject obj in levelButtons)
             {
                 Destroy(obj);
@@ -63,7 +62,7 @@ public class LevelUIPanelHandler : MonoBehaviour
 
             ResizeLevelPanel(gameControllerObj.GetComponent<LevelLoader>().TotalLevels, levelButtonPrefab.GetComponent<RectTransform>().sizeDelta.y);
             Vector2 pos = buttonHolder.gameObject.GetComponent<RectTransform>().sizeDelta;
-            float startingY = -(pos.y / 2) + 160f;
+            float startingY = -(pos.y / 2) + 250f;
             buttonPos = new Vector2(-750f, startingY); // -4850f
             GenerateButton(gameControllerObj.GetComponent<LevelLoader>().CurrentLevel);
 
@@ -75,17 +74,15 @@ public class LevelUIPanelHandler : MonoBehaviour
     {
         Debug.Log(amountOfLevels);
         float rows = (amountOfLevels / 4) + 1;
-        float totalHeight = (height + 100f) * rows;
+        float totalHeight = (height + 150f) * rows;
 
-        Debug.Log(rows);
-        Debug.Log(height);
         buttonHolder.GetComponent<RectTransform>().sizeDelta = new Vector2(1900f, totalHeight);
         buttonHolder.GetComponent<RectTransform>().anchoredPosition = new Vector2(0.0f, totalHeight / 2);
     }
 
     private void GenerateButton(int level)
     {
-        for (int i = 0; i <= level; ++i)
+        for (int i = 1; i <= level; ++i)
         {
             if (buttonContainer != null)
             {
@@ -94,7 +91,7 @@ public class LevelUIPanelHandler : MonoBehaviour
                 button.transform.SetParent(buttonContainer.transform, false);
                 button.transform.localPosition = buttonPos;
                 button.GetComponentInChildren<Text>().text = i.ToString();
-                if ((i + 1) % 4 == 0)
+                if ((i + 1) % 5 == 0)
                 {
                     buttonPos.y += 450f;
                     buttonPos.x = -750f;

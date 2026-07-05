@@ -128,7 +128,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!96 &58969074
 TrailRenderer:
-  serializedVersion: 3
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -174,6 +174,7 @@ TrailRenderer:
   m_SortingLayerID: 122993719
   m_SortingLayer: 1
   m_SortingOrder: 1
+  m_MaskInteraction: 0
   m_Time: 0.15
   m_PreviewTimeScale: 1
   m_Parameters:
@@ -250,7 +251,6 @@ TrailRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MinVertexDistance: 0.1
-  m_MaskInteraction: 0
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
@@ -1265,6 +1265,7 @@ GameObject:
   m_IsActive: 1
 --- !u!212 &625430321
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1310,6 +1311,7 @@ SpriteRenderer:
   m_SortingLayerID: -1604444519
   m_SortingLayer: 3
   m_SortingOrder: 1
+  m_MaskInteraction: 0
   m_Sprite: {fileID: -4133645726592130580, guid: 7c5558e8e2685ae429307e622be41cf7,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1320,7 +1322,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &625430322
 Transform:
@@ -2495,14 +2496,14 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164673888}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 12
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
+  m_CookieSize2D: {x: 10, y: 10}
   m_Shadows:
     m_Type: 0
     m_Resolution: -1
@@ -3285,6 +3286,7 @@ CapsuleCollider2D:
   m_Direction: 1
 --- !u!212 &1649441140
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3330,6 +3332,7 @@ SpriteRenderer:
   m_SortingLayerID: -1604444519
   m_SortingLayer: 3
   m_SortingOrder: 1
+  m_MaskInteraction: 0
   m_Sprite: {fileID: -4845973803768309529, guid: d63d2c47c31832c44b17fed46a8ae2cc,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3340,7 +3343,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1649441141
 Transform:
@@ -3574,12 +3576,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2c64b007a56ae34384cc79534324100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelPanelObj: {fileID: 0}
-  inGamePanelObj: {fileID: 0}
-  settingsPanelObj: {fileID: 0}
-  winStatePanelObj: {fileID: 0}
-  failStatePanelObj: {fileID: 0}
-  loadingScreenPanelObj: {fileID: 0}
 --- !u!114 &1674087746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3954,6 +3950,7 @@ GameObject:
   m_IsActive: 1
 --- !u!212 &1957762956
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3999,6 +3996,7 @@ SpriteRenderer:
   m_SortingLayerID: 122993719
   m_SortingLayer: 1
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 89664f93c8502254fb9f046244de7c3e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4008,7 +4006,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.474
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1957762957
 Transform:
@@ -4485,6 +4482,7 @@ GameObject:
   - component: {fileID: 1225261847}
   - component: {fileID: 1225261861}
   - component: {fileID: 1225261862}
+  - component: {fileID: 8850451061775271548}
   m_Layer: 8
   m_Name: SpaceShip
   m_TagString: Player
@@ -4567,6 +4565,7 @@ GameObject:
   m_IsActive: 1
 --- !u!212 &2675973930873223709
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4612,6 +4611,7 @@ SpriteRenderer:
   m_SortingLayerID: 122993719
   m_SortingLayer: 1
   m_SortingOrder: 4
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 7a9b70c9c467bc7488ff82c6130132ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4621,7 +4621,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &2722947081625440703
 MonoBehaviour:
@@ -4675,6 +4674,7 @@ Rigidbody2D:
   m_Constraints: 0
 --- !u!212 &4238361318201201012
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4720,6 +4720,7 @@ SpriteRenderer:
   m_SortingLayerID: -1604444519
   m_SortingLayer: 3
   m_SortingOrder: 3
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 9ae8c8d01c7351546aeea508fb9fcf80, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4729,7 +4730,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!70 &4527609954921789507
 CapsuleCollider2D:
@@ -4857,12 +4857,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3d83e48f4826a48aa6cde18fbb7f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shipBodyCollider: {fileID: 0}
+  shipRearCollider: {fileID: 0}
+  touchCollider: {fileID: 0}
   arrowPrefab: {fileID: 1262601685922389196, guid: f3343ff1699fb01439c2a44161f7a965,
     type: 3}
   canLaunch: 1
   isTutorial: 0
 --- !u!212 &6284916370785695731
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4908,6 +4912,7 @@ SpriteRenderer:
   m_SortingLayerID: -1604444519
   m_SortingLayer: 3
   m_SortingOrder: 1
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 8851394388269596321, guid: bb1fc5b9c769ba64b90bc92b5e8d9a51,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4917,8 +4922,7 @@ SpriteRenderer:
   m_Size: {x: 0.64, y: 0.22}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!4 &8098512660027115450
 Transform:
@@ -4986,9 +4990,10 @@ MonoBehaviour:
   exitDirectionArrowObj: {fileID: 625430320}
   boostBarObj: {fileID: 2082867817}
   settingsObj: {fileID: 0}
+  soundObj: {fileID: 0}
 --- !u!120 &8666785845264480747
 LineRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5034,6 +5039,7 @@ LineRenderer:
   m_SortingLayerID: -1604444519
   m_SortingLayer: 3
   m_SortingOrder: 3
+  m_MaskInteraction: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
@@ -5092,7 +5098,6 @@ LineRenderer:
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
-  m_MaskInteraction: 0
   m_UseWorldSpace: 1
   m_Loop: 1
   m_ApplyActiveColorSpace: 1
@@ -5111,6 +5116,42 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &8850451061775271548
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2156569146243293486}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 1.4199319}
+  m_Radius: 4.661014
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -97,6 +97,15 @@ public class SaveManager : MonoBehaviour
     /// <summary>
     /// 
     /// </summary>
+    /// <param name="isFlickering"></param>
+    public void SetUIFlickerInPlayerPrefs(bool isFlickering)
+    {
+        PlayerPrefs.SetInt("IsFlickering", isFlickering ? 1 : 0);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
     /// <returns></returns>
     public bool GetIsTutorialCompleteInPlayerPrefs()
     {
@@ -148,7 +157,7 @@ public class SaveManager : MonoBehaviour
         {
             return PlayerPrefs.GetInt("Level");
         }
-        else { return 0; }
+        else { return 1; }
     }
 
     /// <summary>
@@ -171,5 +180,18 @@ public class SaveManager : MonoBehaviour
             return PlayerPrefs.GetInt("EndlessScore");
         }
         else { return 0; }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="isFlickering"></param>
+    public bool GetUIFlickerInPlayerPrefs()
+    {
+        if (PlayerPrefs.HasKey("IsFlickering"))
+        {
+            return PlayerPrefs.GetInt("IsFlickering") != 0;
+        }
+        else { return true; }
     }
 }

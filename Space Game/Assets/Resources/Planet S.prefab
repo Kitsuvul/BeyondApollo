@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 4795755829373084158}
   - component: {fileID: 4795755829373084145}
   - component: {fileID: 4795755829373084156}
-  - component: {fileID: 4674196307367942588}
-  - component: {fileID: 326069476021425990}
   - component: {fileID: -4059315076975521721}
+  - component: {fileID: 8460787224447342580}
   m_Layer: 0
   m_Name: Planet S
   m_TagString: Small
@@ -160,52 +159,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 3
---- !u!114 &4674196307367942588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4795755829373084144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65974d7b833b7164b9c209ecde1a9096, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  asteroidSprites: []
-  smallPlanetSprites: []
-  mediumPlanetSprites: []
-  largePlanetSprites: []
-  blackHoleSprites: []
-  explosionObj: {fileID: 1469043937150196504, guid: 08e8986b5a5f375478115464014eae74,
-    type: 3}
---- !u!114 &326069476021425990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4795755829373084144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5a8629dbc7d57c4690b90b603204e65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  asteroidSprites:
-  - {fileID: -1839377291145181718, guid: 87eff1f5c444f3148ba77fa536cc54a2, type: 3}
-  smallPlanetSprites:
-  - {fileID: -8127958782769816296, guid: 7844a2edff260c44aab0c75f7969fe95, type: 3}
-  - {fileID: 3927374700841648307, guid: 19d46debc4eea1247b3b75c7635f626d, type: 3}
-  mediumPlanetSprites:
-  - {fileID: 3402342090362518082, guid: b5d599e764c14c9458b052e77f0dede7, type: 3}
-  - {fileID: -189629791527633483, guid: 6dfa949677f62bf47a0c1d954055b83c, type: 3}
-  largePlanetSprites:
-  - {fileID: -4894997275655309303, guid: ba348cc0f58d67049a3ce61c4427a7cc, type: 3}
-  - {fileID: 21300000, guid: 1113fa88b38820a4a8e00ea32e70a90d, type: 3}
-  blackHoleSprites:
-  - {fileID: 1659985312132837270, guid: 67f301f9ce4fa5d478724ca9586b968c, type: 3}
-  explosionObj: {fileID: 1469043937150196504, guid: 08e8986b5a5f375478115464014eae74,
-    type: 3}
 --- !u!120 &-4059315076975521721
 LineRenderer:
   serializedVersion: 3
@@ -316,3 +269,20 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &8460787224447342580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4795755829373084144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a3253ea7f34c6a4fb2aa50803d8ec23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlanetSmallScript
+  planetSprites:
+  - {fileID: 3927374700841648307, guid: 19d46debc4eea1247b3b75c7635f626d, type: 3}
+  - {fileID: -8127958782769816296, guid: 7844a2edff260c44aab0c75f7969fe95, type: 3}
+  explosionObj: {fileID: 1469043937150196504, guid: 08e8986b5a5f375478115464014eae74,
+    type: 3}

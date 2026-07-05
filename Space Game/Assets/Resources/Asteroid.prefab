@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 5289773634592119373}
   - component: {fileID: 5289773634592119374}
   - component: {fileID: 5289773634592119371}
-  - component: {fileID: 8957203496691087814}
-  - component: {fileID: 2087785132197613887}
   - component: {fileID: -351592383814611020}
+  - component: {fileID: -112353863992770561}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Tiny
@@ -32,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 10, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -86,7 +85,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -1839377291145181718, guid: 87eff1f5c444f3148ba77fa536cc54a2,
+  m_Sprite: {fileID: 8375297534299159568, guid: c07a850dc3399ad488b68144e8aeab79,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -131,8 +130,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.24983354
+  m_Offset: {x: 0.07435004, y: 0}
+  m_Radius: 8.130841
 --- !u!50 &5289773634592119371
 Rigidbody2D:
   serializedVersion: 5
@@ -160,52 +159,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 3
---- !u!114 &8957203496691087814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5289773634592119375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65974d7b833b7164b9c209ecde1a9096, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  asteroidSprites: []
-  smallPlanetSprites: []
-  mediumPlanetSprites: []
-  largePlanetSprites: []
-  blackHoleSprites: []
-  explosionObj: {fileID: 1469043937150196504, guid: 08e8986b5a5f375478115464014eae74,
-    type: 3}
---- !u!114 &2087785132197613887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5289773634592119375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5a8629dbc7d57c4690b90b603204e65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  asteroidSprites:
-  - {fileID: -1839377291145181718, guid: 87eff1f5c444f3148ba77fa536cc54a2, type: 3}
-  smallPlanetSprites:
-  - {fileID: -8127958782769816296, guid: 7844a2edff260c44aab0c75f7969fe95, type: 3}
-  - {fileID: 3927374700841648307, guid: 19d46debc4eea1247b3b75c7635f626d, type: 3}
-  mediumPlanetSprites:
-  - {fileID: 3402342090362518082, guid: b5d599e764c14c9458b052e77f0dede7, type: 3}
-  - {fileID: -189629791527633483, guid: 6dfa949677f62bf47a0c1d954055b83c, type: 3}
-  largePlanetSprites:
-  - {fileID: -4894997275655309303, guid: ba348cc0f58d67049a3ce61c4427a7cc, type: 3}
-  - {fileID: 21300000, guid: 1113fa88b38820a4a8e00ea32e70a90d, type: 3}
-  blackHoleSprites:
-  - {fileID: 1659985312132837270, guid: 67f301f9ce4fa5d478724ca9586b968c, type: 3}
-  explosionObj: {fileID: 1469043937150196504, guid: 08e8986b5a5f375478115464014eae74,
-    type: 3}
 --- !u!120 &-351592383814611020
 LineRenderer:
   serializedVersion: 3
@@ -316,3 +269,21 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &-112353863992770561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5289773634592119375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28c6a0d4b545d664680fbdf1db9ca11c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlanetExtraSmallScript
+  planetSprites:
+  - {fileID: 8375297534299159568, guid: c07a850dc3399ad488b68144e8aeab79, type: 3}
+  - {fileID: -3483797559885126447, guid: e9d2f2facd40fbf408ee281448bab78b, type: 3}
+  - {fileID: 3640829990859128225, guid: b3482dcff0fb47b498168eead472747d, type: 3}
+  explosionObj: {fileID: 1469043937150196504, guid: 08e8986b5a5f375478115464014eae74,
+    type: 3}

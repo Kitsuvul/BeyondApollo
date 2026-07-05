@@ -23,6 +23,10 @@ public class ShipControlsScript : MonoBehaviour
 
     private TutorialHandler tutorialScript;
 
+    public CapsuleCollider2D shipBodyCollider;
+    public BoxCollider2D shipRearCollider;
+    public CircleCollider2D touchCollider;
+
     [SerializeField] 
     private GameObject arrowPrefab;
 
@@ -67,8 +71,30 @@ public class ShipControlsScript : MonoBehaviour
         baseHelperScript = gameController.GetComponent<HelperScript>();
         baseShipScript = this.gameObject.GetComponent<BaseShipScript>();
 
+        // Colliders
+        shipBodyCollider = this.gameObject.GetComponent<CapsuleCollider2D>();
+        shipRearCollider = this.gameObject.GetComponent<BoxCollider2D>();
+        touchCollider = this.gameObject.GetComponent<CircleCollider2D>();
+
+        // Disable collision colliders
+        DisableShipCollisionColliders();
+
         tutorialScript = GameObject.FindGameObjectWithTag("CanvasUI").GetComponent<TutorialHandler>();
         this.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+    }
+
+    void EnableShipCollisionColliders()
+    {
+        shipBodyCollider.enabled = true;
+        shipRearCollider.enabled = true;
+        touchCollider.enabled = false;
+    }
+
+    void DisableShipCollisionColliders()
+    {
+        shipBodyCollider.enabled = false;
+        shipRearCollider.enabled = false;
+        touchCollider.enabled = true;
     }
 
     // Update is called once per frame
@@ -124,6 +150,7 @@ public class ShipControlsScript : MonoBehaviour
     /// </summary>
     public void ResetTouch()
     {
+        inputHelperScript.ForceReset = true;
         isTouched = false;
     }
 
@@ -183,31 +210,34 @@ public class ShipControlsScript : MonoBehaviour
     /// </summary>
     void UpdateLaunchControls()
     {
-        if (!isTouched)
+        if(Camera.main.GetComponent<CameraScript>().CameraInLaunchPosition)
         {
-            // Checking if the player has touched the rocket
-            if (inputHelperScript.CheckSingleTouch())
+            if (!isTouched)
             {
-                CheckRocketForTouch(Input.GetTouch(0).position, false);
+                // Checking if the player has touched the rocket
+                if (inputHelperScript.CheckSingleTouch())
+                {
+                    CheckRocketForTouch(Input.GetTouch(0).position, false);
+
+                }
+                else if (inputHelperScript.CheckSingleClickDown())
+                {
+                    CheckRocketForTouch(baseHelperScript.GetVec2FromPositionHelper(Input.mousePosition), true);
+                }
+            }
+            else if (isTouched)
+            {
+                // Launching the Rocket
+                if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+                {
+                    LaunchRocketShip(Input.GetTouch(0).position);
+                }
+                else if (inputHelperScript.CheckSingleClickUp())
+                {
+                    LaunchRocketShip(baseHelperScript.GetVec2FromPositionHelper(Input.mousePosition));
+                }
 
             }
-            else if (inputHelperScript.CheckSingleClickDown())
-            {
-                CheckRocketForTouch(baseHelperScript.GetVec2FromPositionHelper(Input.mousePosition), true);
-            }
-        }
-        else if (isTouched)
-        {
-            // Launching the Rocket
-            if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
-            {
-                LaunchRocketShip(Input.GetTouch(0).position);
-            }
-            else if(inputHelperScript.CheckSingleClickUp())
-            {
-                LaunchRocketShip(baseHelperScript.GetVec2FromPositionHelper(Input.mousePosition));
-            }
-
         }
     }
 
@@ -220,8 +250,10 @@ public class ShipControlsScript : MonoBehaviour
     {
         Vector2 raycast = Camera.main.ScreenToWorldPoint(inputPosition);
         RaycastHit2D rayCastHit = Physics2D.Raycast(raycast, inputPosition);
+        Debug.Log(rayCastHit.collider);
         if (rayCastHit.collider && uiHandlerObj != null)
         {
+            Debug.Log("HitCollider");
             LogColliderHitAndDrawArrow(rayCastHit, inputPosition, isPCControls);
         }
         else if (rayCastHit.collider && isTutorial)
@@ -241,6 +273,7 @@ public class ShipControlsScript : MonoBehaviour
         if (rayCastHit.collider.gameObject == this.gameObject)
         {
             DrawDirectionalArrow(inputPosition, startPos, isPCControls);
+            Debug.Log("Touched");
             isTouched = true;
         }
         else { isTouched = false; }
@@ -281,6 +314,7 @@ public class ShipControlsScript : MonoBehaviour
         {
             launchDir = arrowObject.transform.position - rocketShip.transform.position;
             soundObj.GetComponent<SoundHandler>().PlayAudioRocketLaunchClip();
+            EnableShipCollisionColliders();
             hasLaunched = true;
         }
         isTouched = false;
@@ -314,6 +348,7 @@ public class ShipControlsScript : MonoBehaviour
             boostEnable = false;
             this.gameObject.GetComponent<BaseShipScript>().IsDead = false;
             boost = 1000;
+            DisableShipCollisionColliders();
 
             baseShipScript.RocketAnimator.SetTrigger("OnReset");
             if (this.gameObject.GetComponent<SpriteRenderer>().enabled == false)

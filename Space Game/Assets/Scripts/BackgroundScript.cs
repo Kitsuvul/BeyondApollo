@@ -2,6 +2,9 @@ using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
 
+/// <summary>
+/// DEPRECATED
+/// </summary>
 public class BackgroundScript : MonoBehaviour
 {
     #region Variables

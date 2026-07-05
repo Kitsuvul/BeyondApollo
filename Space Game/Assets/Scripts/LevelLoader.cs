@@ -30,7 +30,7 @@ public class LevelLoader : MonoBehaviour
     [SerializeField] private GameObject CometPrefab;
     private SaveManager saveManagerScript;
     private HelperScript helperScript;
-    private int currentLevel = 0;
+    private int currentLevel = 1;
     private bool levelLoaded = false;
     private List<GameObject> loadedPlanetObjs;
     private Vector3 previousPos;
@@ -131,7 +131,7 @@ public class LevelLoader : MonoBehaviour
 
             foreach (GameObject planet in loadedPlanetObjs)
             {
-                if(planet != null && planet.GetComponent<PlanetScript>().IsOutOfRange)
+                if(planet != null && planet.GetComponent<PlanetBase>().IsOutOfRange)
                 {
                     loadedPlanetObjs.Remove(planet);
                     DestroyPlanet(planet);
@@ -290,8 +290,8 @@ public class LevelLoader : MonoBehaviour
             GameObject planetObj = Instantiate(planet.planetPrefab, planet.Position, new Quaternion(0.0f, 0.0f, 0.0f, 0.0f));
             if(planet.isSatellite)
             {
-                planetObj.GetComponent<PlanetScript>().SetSatellite(loadedPlanetObjs[loadedPlanetObjs.Count() - 1]);
-                planetObj.GetComponent<PlanetScript>().IsSatellite = planet.isSatellite;
+                planetObj.GetComponent<PlanetBase>().SetSatellite(loadedPlanetObjs[loadedPlanetObjs.Count() - 1]);
+                planetObj.GetComponent<PlanetBase>().IsSatellite = planet.isSatellite;
             }
             loadedPlanetObjs.Add(planetObj);
         }

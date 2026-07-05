@@ -6,6 +6,24 @@ using UnityEngine;
 
 public class InputScript : MonoBehaviour
 {
+    bool forceReset = false;
+
+    public bool ForceReset
+    {
+        get { return forceReset; }
+        set
+        {
+            forceReset = value;
+        }
+    }
+
+    private void Update()
+    {
+        if(forceReset && CheckSingleClickUp())
+        {
+            forceReset = false;
+        }
+    }
 
     /// <summary>
     /// Checks for a single click release from the User
@@ -29,8 +47,25 @@ public class InputScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            //Debug.Log("Mouse Button One Down");
             return true;
+        }
+        return false;
+    }
+
+    public bool CheckSingleClickAndHold()
+    {
+        if (!forceReset && Input.touchCount == 0)
+        {
+            return Input.GetKey(KeyCode.Mouse0);
+        }
+        return false;
+    }
+
+    public bool CheckSingleTouchAndHold()
+    {
+        if (!forceReset)
+        {
+            return Input.touchCount == 1;
         }
         return false;
     }
@@ -43,7 +78,6 @@ public class InputScript : MonoBehaviour
     {
         if ((Input.touchCount == 1) && (Input.GetTouch(0).phase == TouchPhase.Began))
         {
-            //Debug.Log("Single Touch");
             return true;
         }
         return false;
@@ -57,7 +91,6 @@ public class InputScript : MonoBehaviour
     {
         if(Input.touchCount == 2)
         {
-            //Debug.Log("Double Touch");
             return true;
         }
         return false;

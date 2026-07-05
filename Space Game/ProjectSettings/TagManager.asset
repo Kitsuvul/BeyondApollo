@@ -41,6 +41,7 @@ TagManager:
   - ExitArrow
   - ExtraLarge
   - Tiny
+  - BackgroundStars
   layers:
   - Default
   - TransparentFX

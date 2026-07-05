@@ -28,18 +28,25 @@ public class ExitArrowHandler : MonoBehaviour
         {
             this.gameObject.GetComponent<SpriteRenderer>().enabled = true;
             UpdateExitArrow();
+            if((winBoxObject.transform.position - player.gameObject.transform.position).magnitude < 10.0f)
+            {
+                ResetExitArrow();
+            }
         }
     }
     private void UpdateExitArrow()
     {
-        Quaternion rot = helperScript.CalculateRotationHelper(winBoxObject.transform.position, player.gameObject.transform.position);
-        Matrix4x4 translatetoPivot = Matrix4x4.TRS(player.transform.position, Quaternion.identity, Vector3.one);
-        Matrix4x4 m = Matrix4x4.Rotate(rot);
-        Matrix4x4 translateBack = Matrix4x4.TRS(-player.transform.position, Quaternion.identity, Vector3.one);
-        Matrix4x4 combined = translatetoPivot * m * translateBack;
+        if ((winBoxObject.transform.position - player.gameObject.transform.position).magnitude > 5.0f)
+        {
+            Quaternion rot = helperScript.CalculateRotationHelper(winBoxObject.transform.position, player.gameObject.transform.position);
+            Matrix4x4 translatetoPivot = Matrix4x4.TRS(player.transform.position, Quaternion.identity, Vector3.one);
+            Matrix4x4 m = Matrix4x4.Rotate(rot);
+            Matrix4x4 translateBack = Matrix4x4.TRS(-player.transform.position, Quaternion.identity, Vector3.one);
+            Matrix4x4 combined = translatetoPivot * m * translateBack;
 
-        this.gameObject.transform.position = combined.MultiplyPoint3x4(new Vector3(player.gameObject.transform.position.x, player.gameObject.transform.position.y + 4.0f, player.gameObject.transform.position.z));
-        this.gameObject.transform.rotation = helperScript.CalculateRotationHelper(winBoxObject.transform.position, player.gameObject.transform.position);
+            this.gameObject.transform.position = combined.MultiplyPoint3x4(new Vector3(player.gameObject.transform.position.x, player.gameObject.transform.position.y + 4.0f, player.gameObject.transform.position.z));
+            this.gameObject.transform.rotation = helperScript.CalculateRotationHelper(winBoxObject.transform.position, player.gameObject.transform.position);
+        }
     }
 
     public void ResetExitArrow()

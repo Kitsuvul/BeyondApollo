@@ -11,6 +11,8 @@ public class FlickerTextScript : MonoBehaviour
     bool moveToggle = false;
     float directionX, directionY;
 
+    private SaveManager saveManagerScript;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -18,13 +20,17 @@ public class FlickerTextScript : MonoBehaviour
         thisOutline = this.GetComponent<Outline>();
         directionX = Random.Range(-2.0f, 2.0f);
         directionY = Random.Range(-2.0f, 2.0f);
+        saveManagerScript = GameObject.FindGameObjectWithTag("PersistSettings").GetComponent<SaveManager>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        FlickerColour();
-        FlickerPosition();
+        if (saveManagerScript.GetUIFlickerInPlayerPrefs())
+        {
+            FlickerColour();
+            FlickerPosition();
+        }
     }
 
     void FlickerColour()

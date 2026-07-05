@@ -9,13 +9,14 @@ using UnityEngine.UI;
 
 public class TopLevelUIHandler : MonoBehaviour
 {
-    [SerializeField] protected GameObject levelPanelObj, inGamePanelObj, settingsPanelObj, winStatePanelObj, failStatePanelObj, loadingScreenPanelObj, endlessPanelObj, endlessTutorialPanelObj;
+    [SerializeField] protected GameObject levelPanelObj, inGamePanelObj, settingsPanelObj, winStatePanelObj, failStatePanelObj, loadingScreenPanelObj, resetCameraPanelObj, endlessPanelObj, endlessTutorialPanelObj;
 
-    protected GameObject rocketShipObj, gameControllerObj, mainCameraObj, exitArrowObj, exitGateObj, soundObj, settingsObj;
+    protected GameObject rocketShipObj, gameControllerObj, mainCameraObj, exitArrowObj, exitGateObj, soundObj, settingsObj, backgroundNebulaObj, backgroundStarsObj;
     protected LevelLoader levelLoader;
     protected CameraScript cameraScript;
     protected HelperScript helperScript;
     protected ExitArrowHandler exitArrowHandler;
+    private GameManagerScript gameManagerScript;
 
     private bool uiIsOpen = false;
     private bool uiHasQueue = false;
@@ -37,10 +38,13 @@ public class TopLevelUIHandler : MonoBehaviour
         exitGateObj = GameObject.FindGameObjectWithTag("WinBox");
         soundObj = GameObject.FindGameObjectWithTag("SoundObject");
         settingsObj = GameObject.FindGameObjectWithTag("PersistSettings");
+        backgroundNebulaObj = GameObject.FindGameObjectWithTag("Background");
+        backgroundStarsObj = GameObject.FindGameObjectWithTag("BackgroundStars");
 
         levelLoader = gameControllerObj.GetComponent<LevelLoader>();
         cameraScript = mainCameraObj.GetComponent<CameraScript>();
         helperScript = gameControllerObj.GetComponent<HelperScript>();
+        gameManagerScript = gameControllerObj.GetComponent<GameManagerScript>();
 
         uiToOpen = new BitArray(5);
 
@@ -64,51 +68,13 @@ public class TopLevelUIHandler : MonoBehaviour
 
     void Update()
     {
+        //Debug.Log(uiIsOpen);
         CheckIfUIPanelsAreOpen();
         QueueNextUIPanel();
+        CheckWhetherToShowResetCameraButton();
     }
 
     #region Methods
-    public void ResetToLoadNextLevel()
-    {
-        BaseReset();
-        levelLoader.LoadNextLevel();
-    }
-
-    public void ResetToLoadSpecificLevel(int level)
-    {
-        BaseReset();
-        levelLoader.LoadSpecificLevel(level);
-    }
-
-    public void ResetLevel()
-    {
-        if (rocketShipObj == null)
-        {
-            Instantiate(Resources.Load("SpaceShip"));
-        }
-
-        BaseReset();
-
-        soundObj.GetComponent<SoundHandler>().StopAudioRocketFlyingClip();
-        levelLoader.ReloadLevel();
-    }
-
-    private void BaseReset()
-    {
-        rocketShipObj.GetComponent<ShipControlsScript>().ResetShipToStart();
-        gameControllerObj.GetComponent<DeathHandler>().ResetDebris();
-        rocketShipObj.GetComponent<PreviousPathHandler>().OnReset();
-        cameraScript.ResetCamera();
-        ResetUIQueue();
-
-        if (!helperScript.IsEndlessMode())
-        {
-            exitArrowHandler.ResetExitArrow();
-            exitGateObj.GetComponent<Collider2D>().enabled = true;
-        }
-    }
-
     public void LoadMainMenu()
     {
         SceneManager.LoadScene(0);
@@ -169,9 +135,37 @@ public class TopLevelUIHandler : MonoBehaviour
         uiToOpen.SetAll(false);
     }
 
+    private void CheckWhetherToShowResetCameraButton()
+    {
+        if(Camera.main.GetComponent<CameraScript>().EnableCameraMovement && !Camera.main.GetComponent<CameraScript>().CameraInLaunchPosition)
+        {
+            OpenResetCameraButtonPanel();
+        }
+        else
+        {
+            CloseResetCameraButtonPanel();
+        }
+    }
+
     #endregion
 
     #region Open/Close Panel Methods
+
+    public void OpenResetCameraButtonPanel()
+    {
+        if (resetCameraPanelObj != null)
+        {
+            resetCameraPanelObj.SetActive(true);
+        }
+    }
+
+    public void CloseResetCameraButtonPanel()
+    {
+        if (resetCameraPanelObj != null)
+        {
+            resetCameraPanelObj.SetActive(false);
+        }
+    }
 
     public void OpenInGamePanel()
     {
