@@ -1,7 +1,8 @@
 # SpaceGame
 Lots of changes here, needed to do a clean up from the old repository. The old one got super cluttered with unnecessary files from a bad .gitignore setup and I didn't want to go through and delete all the files. I will link the old repository on my portfolio though.
 
-Date: 27/08/26
+Date: 27/08/26 ====================================================================
+
 Decided to make this a bit of a development diary of sorts, currently working on a big rework of the UI and tutorial. 
 
 I got feedback from a friend that the old tutorial was very basic and was a bit forgetable once you reached the main game so I am working on making it more memorable with some animation and key ideas to make it more accessible. I've move the tutorial from it's own scene to the main game, loading based on whether you have completed it or not, sorting the data within the playerprefs and XML.
