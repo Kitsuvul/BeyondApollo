@@ -1,13 +1,15 @@
 # SpaceGame
 Lots of changes here, needed to do a clean up from the old repository. The old one got super cluttered with unnecessary files from a bad .gitignore setup and I didn't want to go through and delete all the files. I will link the old repository on my portfolio though.
 
-To do List:
-- Update UI sprites, currently they aren't re-sizable and look a bit scuffed sized how they are right now.
-- Create the new levels file - I have added a couple of new "Planets" and I want to incorporate them into the game.
-- Tutorial update so it's more directly included into the levels rather than a single time/replayable thing
-    - Will also allow me to implement new features and drip feed them to the player.
-- I want to add some twinkling to the background so it looks a bit prettier.
-- I want to perhaps add a pulsar but struggling to think of a good art asset for it and how it would work.
-    - Thinking about having is jet ever 2/3 seconds whilst spinning, something to avoid.
-- Need to go over the code:
-    - Add a state machine for the UI and scenemanager
+Date: 27/08/26
+Decided to make this a bit of a development diary of sorts, currently working on a big rework of the UI and tutorial. 
+
+I got feedback from a friend that the old tutorial was very basic and was a bit forgetable once you reached the main game so I am working on making it more memorable with some animation and key ideas to make it more accessible. I've move the tutorial from it's own scene to the main game, loading based on whether you have completed it or not, sorting the data within the playerprefs and XML.
+
+I have also made it accessible anytime from a button on the main screen, so if you come back after not playing you can see it all there. I have also made it more dynamic, adding animations to show how mechanics work.
+
+Lastly I have been completely updating the UI, making it look more dynamic and making it fit the style I want more, e.g. adding a monitor flicker when you open the UI or change page, similar to how an old CRT would to get it that feel.
+
+Things I am working on next including making my own line renderer that works within the UI, I use it a lot in the main game and I need it to demonstrate certain mechanics within the tutorial. I could just demonstraite it on the game level but I like the idea of seeing the example on a UI panel and allows me to push my coding skills a bit more.
+
+I will try and update this once a week!
